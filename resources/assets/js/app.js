@@ -15,8 +15,15 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('top-nav-admin', require('./components/admin/TopNav.vue'));
+Vue.component('side-nav-admin', require('./components/admin/SideNav.vue'));
 
 const app = new Vue({
     el: '#app'
+});
+
+$(document).ready(function() {
+    $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+    });
 });
